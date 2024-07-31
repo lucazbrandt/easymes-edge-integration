@@ -20,7 +20,6 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Cre
 builder.Services.AddEasyMESEdge(builder.Configuration);
 var mapperConfig = new MapperConfiguration(cfg =>
 {
-    cfg.AddMaps(typeof(Program).Assembly);
     cfg.AddProfile<CreateCollectionFormAnswerAutomatedProfile>();
     cfg.AddProfile<CreateCollectionFormAnswerAutomatedEasyMESProfile>();
 });
