@@ -1,5 +1,3 @@
-using BrasilApiKata.Infrastructure.Holidays;
-using BrasilKata.Application.Holidays.Services;
 using EasyMESEdgeIntegration.Application.Health.Services;
 using EasyMESEdgeIntegration.Application.Quality.Services;
 using EasyMESEdgeIntegration.Infrastructure.Health;

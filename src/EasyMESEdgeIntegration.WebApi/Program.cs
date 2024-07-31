@@ -1,11 +1,9 @@
-using BrasilKata.Application.Holidays.Handlers;
 using Microsoft.OpenApi.Models;
-using BrasilApiKata.Infrastructure.Commons;
 using EasyMESEdgeIntegration.Infrastructure.Commons;
 using AutoMapper;
 using EasyMESEdgeIntegration.WebApi.Quality;
-using EasyMESEdgeIntegration.Application.Quality;
 using EasyMESEdgeIntegration.Infrastructure.Quality;
+using EasyMESEdgeIntegration.Application.Quality.Handlers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,8 +16,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Kata", Version = "v1" });
 });
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetHolidaysQueryHandler).Assembly));
-builder.Services.AddBrasilApi(builder.Configuration);
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(CreateCollectionFormAnswerAutomatedHandler).Assembly));
 builder.Services.AddEasyMESEdge(builder.Configuration);
 var mapperConfig = new MapperConfiguration(cfg =>
 {

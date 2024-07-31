@@ -1,6 +1,4 @@
-using System.ComponentModel.DataAnnotations;
 using AutoMapper;
-using BrasilKata.Application.Holidays.Queries;
 using EasyMESEdgeIntegration.Application.Quality;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +23,7 @@ public class CreateCollectionFormAnswerAutomatedController : ControllerBase
     [HttpPost(Name = "CreateCollectionFormAnswerAutomated")]
     public async Task<IActionResult> CreateCollectionFormAnswerAutomated(CreateCollectionFormAnswerAutomatedRequest request)
     {
-        _logger.LogInformation("Creating a collection form answr automated" + request.Code);
+        _logger.LogInformation("Creating a collection form answr automated");
 
         var command = _mapper.Map<CreateCollectionFormAnswerAutomatedCommand>(request);
 
